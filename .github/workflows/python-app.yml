@@ -12,20 +12,24 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: "3.10"
 
     - name: Install dependencies
-      run: pip install behave
+      run: |
+        pip install behave pytest testcontainers httpx
 
     - name: Run TDD tests (unittest)
-      run: python -m unittest discover tests
+      run: python -m unittest discover tests -p "test_shopping_cart.py"
 
     - name: Run BDD tests (behave)
       run: python -m behave features
+
+    - name: Run integration tests (pytest + TestContainers)
+      run: python -m pytest tests/integration/ -v
 
   docker:
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
