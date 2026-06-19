@@ -20,7 +20,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install behave pytest testcontainers httpx
+        pip install behave pytest testcontainers httpx "psycopg[binary]" "psycopg-pool"
 
     - name: Run TDD tests (unittest)
       run: python -m unittest discover tests -p "test_shopping_cart.py"
