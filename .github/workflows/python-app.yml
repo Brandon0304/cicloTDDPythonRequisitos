@@ -18,5 +18,11 @@ jobs:
       with:
         python-version: "3.10"
 
-    - name: Run Tests
-      run: python3 -m unittest discover tests
+    - name: Install dependencies
+      run: pip install behave
+
+    - name: Run TDD tests (unittest)
+      run: python -m unittest discover tests
+
+    - name: Run BDD tests (behave)
+      run: python -m behave features
