@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+venv/
+.env
+.git/
+.gitignore
+.gitattributes
+.DS_Store
+README.md
+plan_de_pruebas.md
+evidencias/
