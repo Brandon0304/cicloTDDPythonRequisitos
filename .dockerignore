@@ -3,6 +3,7 @@ __pycache__/
 *.pyo
 *.egg-info/
 venv/
+.venv/
 .env
 .git/
 .gitignore
@@ -11,3 +12,4 @@ venv/
 README.md
 plan_de_pruebas.md
 evidencias/
+.pytest_cache/

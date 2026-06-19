@@ -1,0 +1,23 @@
+[project]
+name = "ciclo-tdd-python-requisitos"
+version = "1.0.0"
+description = "Shopping Cart — TDD + BDD + Integration + System Tests"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "psycopg[binary]>=3.2",
+    "psycopg-pool>=3.2",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8",
+    "pytest-asyncio",
+    "testcontainers>=4",
+    "httpx>=0.28",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
